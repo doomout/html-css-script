@@ -56,4 +56,17 @@
             <input type="number" id="age">
         </p>
     </fieldset>
+- <textarea> : 두 줄 이상의 글을 쓸 때 사용
+- <textarea id="id" name="name">
+    - id="id"는 <textarea> 요소의 고유 식별자로 사용
+    - name="name"은 폼 요소의 이름을 나타내는 속성
+- <select> : 콤보 박스 생성(<select name="city" id="city" size="4" multiple>) <!--4개씩 표시, 다중 선택-->
+    -<optgroup> : 콤보 박스를 그룹으로 묶을 때 
+        -<option> : 서버에 전송할 값
+- 폼 태그에서 공통으로 사용 가능한 추가 속성
+    - disabled : 비활성화
+    - readonly : 읽기 전용
+    - maxlength : 입력할 수 있는 글자수 설정
+    - checked : 선택된 상태로 표시
+    - placeholder : 입력 요소에 대한 힌트 설정
 ```
