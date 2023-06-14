@@ -60,7 +60,7 @@
 - <textarea id="id" name="name">
     - id="id"는 <textarea> 요소의 고유 식별자로 사용
     - name="name"은 폼 요소의 이름을 나타내는 속성
-- <select> : 콤보 박스 생성(<select name="city" id="city" size="4" multiple>) <!--4개씩 표시, 다중 선택-->
+- <select> : 콤보 박스(<select name="city" id="city" size="4" multiple>)<!--4개씩 표시, 다중 선택-->
     -<optgroup> : 콤보 박스를 그룹으로 묶을 때 
         -<option> : 서버에 전송할 값
 - 폼 태그에서 공통으로 사용 가능한 추가 속성
@@ -69,4 +69,18 @@
     - maxlength : 입력할 수 있는 글자수 설정
     - checked : 선택된 상태로 표시
     - placeholder : 입력 요소에 대한 힌트 설정
+```
+(3) 표 관련 태그
+```html
+- <table> : 표 생성시 사용
+- <caption> : 표 제목 표시(table 태그 안에서 첫번째로 작성 해야 함)
+- <tr> : 행(가로) 생성
+- <th> : 표에서 제목을 나타내는 열을 생성할 때
+- <td> : 표에서 일반적인 데이터를 나타내는 열 생성
+    - rowspan : 행 병합
+    - colspan : 열 병합
+<!--행을 묶여서 그룹화 하는 태그 (하단 3개 순서대로 설정해야 한다.)-->
+- <thead> : 헤더 영역에 해당하는 행
+- <tfoot> : 푸터 영역에 해당하는 행
+- <tbody> : 본문 영역에 해당하는 행
 ```
