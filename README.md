@@ -84,3 +84,11 @@
 - <tfoot> : 푸터 영역에 해당하는 행
 - <tbody> : 본문 영역에 해당하는 행
 ```
+(4) 멀티미디어 태그
+```html
+- <audio> : 오디오 파일 재생(<audio src="오디오 파일 경로" controls>)
+    - 지원 포멧 : mp3, wav, ogg
+- <video> : 비디오 파일 재생(<video src="비디오 파일 경로" controls>)
+    - 지원 포멧 : mp4, WebM, ogg
+- <source> : 오디오, 비디오 태그에서 리소스(파일)의 경로와 미디어 타입을 명시하는데 사용
+```
