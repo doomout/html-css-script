@@ -175,3 +175,85 @@
 2) 주석
     - 한줄 주석 : //한줄 주석
     - 여러줄 주석 : /* 여러줄 주석 */ 
+3) 몇 가지 주의점
+    - var 보단 let 로 변수 선언: let는 변수명 중복 불가능, 호이스팅 불가로 안정적
+    - 상수 값은 const로 선언: 재할당 할 일 없는 값은 고정으로 두는게 안전
+    - 식별자의 첫 글자는 영문 소문자, _ , $ 기호만 가능
+    - 식별자에 공백은 불가
+    - 카멜표기법 : 변수명과 함수명 작성시 (firstName, lastName)
+    - 언더스코어 표기법 : 상수명 작성시 (FIRST_NAME, last_name)
+    - 논리형 : true, false 값만 가능
+    - undefined : 변수나 상수에 데이터 미할당시 자동으로 할당되는 값
+    - null 자료형: 변수나 상수를 선언하고 의도적으로 공단 비울 때 사용
+    - 파스칼 표기법 : 생성자 함수명 작성시 (FirstName, LastName)
+    - 문자열에 " 나 ' 가 있으면 + 연산자로 합칠 수 있다.  
+        ('문자열은 큰 따옴표("")나 ' + "작은 따옴표('')로 감싸면 된다.")
+    - 문자열을 정의할 때 사용하는 기호지만, 역슬래시(\)를 붙이면 순수한 문자로 인식
+        ('문자열은 큰 따옴표(")나 작은 따옴표(\')로 감싸면 된다.')
+    - ES6에서 추가된 템플릿 문자열 사용 예 (백틱(`) : ~표시 위에 있는 문자)
+```script
+let string = `문자열은 큰 따옴표(")나 작은 따옴표(')로 감싸면 된다.`;
+let string2 = `문자열은 큰 따옴표(")나 
+                작은 따옴표(')로 감싸면 된다.`; //줄 바꿈
+console.log(string);
+console.log(string2);
+let dan = 2;
+let gugu = 8;
+let string3 = `${dan}  곱하기 ${gugu} 은 ${dan * gugu}입니다.`; //변수 또는 식 넣음
+console.log(string3);
+```
+
+4) 객체 자료형
+    - 배열 : 복수의 데이터를 정의
+    - 객체 리터널 : 객체를 정의 할 때 {key : value} 으로 이루어진 속성으로 정의
+```script
+//배열로 저장
+let studentScore = [80, 70, 90, 60]; //국어, 영어, 수학, 과학 점수
+console.log(studentScore[1]); // 1번 인덱스(영어) 점수
+
+//객체 리터널
+let studentScore = {
+    koreanScore : 80,
+    englishScore : 70,
+    mathScore : 90,
+    scienceScore : 60
+};
+console.log(studentScore.koreanScore); //80 - . 로
+console.log(studentScore['englishScore']); //70 - [] 로
+```
+
+5) 연산자 중 특이점
+    - 전치연산 (++x) : x를 먼저 1 증가 시킨다.
+    - 후치연산 (x++) : x를 할당하고 후에 1증가 시킨다. 
+    - 비교 연산자 
+        - x == y : x 와 y의 값이 같으면 true 반환
+        - x === y : x와 y의 값과 자료형이 같으면 true 반환
+        - x != y : x 와 y의 값이 다르면 true 반환
+        - x !== y : x와 y의 값과 자료형이 다르면 true 반환
+    - 논리 연산자
+        - x && y : x가 참이면 y반환, 거짓이면 x반환
+        - x || y : x가 참이면 x반환, 거짓이면 y반환
+        - !x : x가 참이면 false 반환, 거짓이면 true 반환
+        - 자료형 중 ""(빈 문자열), undefined, 0, null은 거짓으로 평가
+    - 삼항 연산자
+        - x ? y : z (x가 참이면 y반환, 거짓이면 z 반환)
+6) 형 변환
+    
+```script
+//암시적 형 변환 
+const result = 10 + "10"; //자동으로 숫자를 문자열로 변환
+console.log(result); //결과값 : 1010
+
+let num = 10;
+let strNum = "10";
+if(num == strNum) { //자동으로 문자열을 숫자형으로 변환
+    console.log(`equals`);
+}
+
+//명시적 형 변환(추천)
+let num = 10;
+let strNum = "10";
+if(String(num) == strNum) {
+    console.log(`equals`);
+}
+```
