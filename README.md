@@ -257,3 +257,141 @@ if(String(num) == strNum) {
     console.log(`equals`);
 }
 ```
+7) 조건문
+    - if문은 조건식에 식을 이용, swich문은 조건에 값을 사용
+```script
+if(조건식1) {
+    //조건식1 이 참일 때 실행
+}else if(조건식2){
+    //조건식2 가 참일 떄 실행
+}else {
+    //조건식이 모두 거짓일 때 실행
+}
+
+switch(key) {
+    case value1 : 
+        //key 가 value1 일 때 실행
+        break;
+    case value2 : 
+        //key 가 value2 일 때 실행
+        break;
+    default:
+        //아무것도 일치하지 않을 때 실행
+        break;
+}
+```
+8) 반복문
+```script
+while(조건식) {
+    //조건식이 참이면 실행
+}
+
+do {
+    //처음에 무조건 실행
+}while(조건식);
+
+for(초기값; 조건식; 증감식) {
+    //블럭문
+}
+
+for(가변수 in 배열/객체 리터럴) {
+    //블록문
+}
+
+break 문 : 반복문 종료
+continue 문 : 반복문을 건너 뛰고 다시 반복
+```
+9) 함수
+- const 변수명 = function(){}; //익명함수
+- const 변수명 = function 식별자() {}; //네이밍 함수
+- 함수 표현식으로 함수를 정의 할 땐 const 키워드를 주로 사용
+- 함수 스코프 : 함수에서 정의한 블록문만 스코프의 유효 범위로 인정하는 방식
+- 함수 내부는 지역 스코프, 함수 외부는 전역 스코프 영역
+- 함수 호이스팅 : 코드를 선언과 할당으로 분리해 선언부를 자신의 스코프 최상위로 끌어 올리는 것
+```script
+//네이밍 함수
+const gugudan = function gugudan() {
+    for(let i = 1; i <= 9; i++) {
+        console.log(`3 * ${i} = ${3 * i}`);
+    }
+};
+gugudan(); //함수 호출
+
+//화살표 함수(익명 함수) : ES6 에서 추가 된 함수. 함수를 호출하려면 정의된 함수를 변수에 할당 해야 함
+const gugudan = () =>{
+    for(let i = 1; i <= 9; i++) {
+        console.log(`3 * ${i} = ${3 * i}`);
+    }
+};
+gugudan(); //함수 호출
+
+/*
+함수 기능 확장(매개변수와 인수)
+매개변수 : 외부에서 전달하는 데이터를 함수에서 받을 수 있도록 정의
+인수 : 함수를 호출할 때 () 안에 전달하고 싶은 데이터를 정의
+*/
+function gugudan(dan) { //dan: 매개변수
+    for(let i = 1; i <= 9; i++) {
+        console.log(`${dan} * ${i} = ${dan * i}`);
+    }
+};
+//()안에 있는 숫자가 인수
+gugudan(3); //3단 출력
+gugudan(5); //5단 출력
+gugudan(8); //8단 출력
+
+//화살표 함수에서 매개변수 정의
+const sum = (num1, num2) => {
+    console.log(num1, num2);
+};
+sum(10, 20);
+
+//기본값 할당
+function sum(a = 10, b = 20) {
+    console.log(a, b);
+}
+sum(); //10, 20
+
+//return 문 : 함수 외부로 데이터를 반환 할 때 사용
+function sum(num1, num2) {
+    let result = num1 + num2;
+    return result;
+}
+const result = sum(10, 20);
+console.log("out : " + result); //out : 30
+```
+10) 객체 선언, 접근법
+
+```script
+//객체 속성에 접근하기
+const person = {
+    name:"kim",
+    age: 20
+};
+//객체 속성에 접근하려면 객체명 뒤에 대괄호[]를 붙이고 [] 안에 키를 넣는다.
+//키는 반드시 "" 나 ''로 감싼 문자열 형태로 작성해야 한다.
+console.log(person["name"]); //kim
+console.log(person["age"]); //20
+
+const person = {
+    name: {
+        firstName: "Gildong",
+        lastName: "Hong"
+    },
+    likes : ["apple", "samsung"],
+    printHello : function() {
+        return "hello";
+    }
+};
+//[] 연산자로 접근
+console.log(person["name"]["firstName"]);  //Gildong
+console.log(person["likes"][0]); //apple 
+console.log(person["likes"][1]); //samsung
+console.log(person["printHello"]()); //hello
+
+//. 연산자로 접근
+console.log(person.name.firstName);  //Gildong
+console.log(person.age);  //20
+console.log(person.likes[0]);  //apple 배열 호출에는 [index] 사용
+console.log(person.printHello());  //hello 함수 호출에는 ()를 사용
+```
